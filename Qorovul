@@ -1,0 +1,774 @@
+<?php
+define('API_KEY','1895824014:AAG4oWuY3KpmgkyVi7qV11LSXU1xmQ95Cgg');
+$token = "1895824014:AAG4oWuY3KpmgkyVi7qV11LSXU1xmQ95Cgg";
+//tokenni yozing
+$admin = "1642362250";
+//admin id raqami
+//Bu kod https://t.me/Shaydullayev_Dev  tomonidan tuzildi
+   function del($nomi){
+   array_map('unlink', glob("$nomi"));
+   }
+
+   function ty($ch){ 
+   return bot('sendChatAction', [
+   'chat_id' => $ch,
+   'action' => 'typing',
+   ]);
+} 
+//<•••••••• @Foydali_Bots ••••••••>\\
+function bot($method,$datas=[]){
+    $url = "https://api.telegram.org/bot".API_KEY."/".$method;
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch,CURLOPT_POSTFIELDS,$datas);
+    $res = curl_exec($ch);
+    if(curl_error($ch)){
+        var_dump(curl_error($ch));
+    }else{
+        return json_decode($res);
+    }
+}
+$update = json_decode(file_get_contents('php://input'));
+$edname = $editm ->from->first_name;
+$message = $update->message;
+$mesid = $message->message_id;
+$mid = $message->message_id;
+$chat_id = $message->chat->id;
+$cid = $message->chat->id;
+$mtext = $message->text;
+$Foydali_Bots = $message->text;
+$Foydali_Bots1 = $message->text;
+$capt = $message->caption;
+$des = $get->result->description;
+$forward = $update->message->forward_from;
+$forward_from_chat = $update->message->forward_from_chat;
+$via_bot = $update->message->via_bot;
+$from_chat_id = $forward_from_chat->id;
+$editm = $update->edited_message;
+$fadmin = $message->from->id;
+$cty = $message->chat->type;
+$step=file_get_contents("data/$fadmin/name.txt");
+//editlar
+
+$editm = $update->edited_message;
+$edname = $editm->from->first_name;
+$edchat = $editm->chat->id;
+$ediid = $editm->from->id;
+$editext = $editm->text;
+$edimid = $editm->message_id; 
+//yangi bo‘lim
+
+$update = json_decode(file_get_contents('php://input'));
+$data = $update->callback_query->data;
+$cid2 = $update->callback_query->message->chat->id; 
+$cqid = $update->callback_query->id;
+$chat_id2 = $update->callback_query->message->chat->id;
+$ch_user2 = $update->callback_query->message->chat->username;
+$message_id2 = $update->callback_query->message->message_id;
+$fadmin2 = $update->callback_query->from->id;
+$chat_id = $update->callback_query->message->chat->id;
+$message_id2 = $update->callback_query->message->message_id;
+$soat = date('H:i:s', strtotime('3 hour'));
+$bugun = date('d-M Y',strtotime('3 hour'));
+$message = $update->message;
+$mid = $message->message_id;
+$chat_id = $message->chat->id;
+$Foydali_Bots1 = $message->text;
+$gif = $message->animation;
+$doc = $message->document;
+$gusername = $message->chat->username;
+$title = $message->chat->title;
+$fadmin = $message->from->id;
+$lang = $message->from->language_code;
+$from = $message->from;
+$id = $message->reply_to_message->from->id;
+$user_id = $update->message->from->id;
+$message_id = $message->reply_to_message->message_id;
+$from_user_first_name = $message->reply_to_message->from->first_name;
+$Foydali_Botsmessage = isset($update->message->text)?$update->message->text:'';
+
+$chan  = $update->channel_post;
+$ch_text = $chan->text;
+$ch_photo = $chan->photo;
+$ch_mid = $chan->message_id;
+$ch_cid = $chan->chat->id;
+
+//group
+$ctitle = $update->message->chat->title;
+$cuname = $update->message->chat->username;
+$chat_id = $update->message->chat->id;
+$cid = $update->message->chat->id;
+$turi = $update->message->chat->type;
+$cty = $update->message->chat->type;
+$ufname = $update->message->from->first_name;
+$chatuser = $update->message->chat->username;
+$uname = $update->message->from->last_name;
+$ulogin = $update->message->from->username;
+$user_id = $update->message->from->id;
+
+//Yangi odam id si
+$new_chat_members = $message->new_chat_member->id;
+$lan = $message->new_chat_member->language_code;
+$ism = $message->new_chat_member->first_name;
+$username = $message->from->username;
+$first_name = $message->from->first_name;
+$name = $message->from->first_name;
+$chatuser = $update->message->chat->username;
+$is_bot = $message->new_chat_member->is_bot;
+$step = file_get_contents("stat/$chat_id.step");
+$guruhlar = file_get_contents("stat/group.list");
+$userlar = file_get_contents("stat/user.list");
+mkdir("warn");
+mkdir("stat");
+mkdir("viki");
+
+if($Foydali_Bots1 == '/code' and $chat_id == $admin){
+bot('sendDocument',[
+'chat_id'=>$chat_id,
+'document'=>new CURLFile(__FILE__),
+'caption'=>"@QOROVUL24_UZBOT *code*",
+'parse_mode'=>"markdown",
+'reply_to_message_id'=>$mid,
+]);
+}
+
+$tagi = "<a href='telegram.me/QOROVUL24_UZBOT?startgroup=new'>👥𝗚𝘂𝗿𝘂𝗵𝗴𝗮 𝗾𝗼'𝘀𝗵𝗶𝘀𝗵➕</a>";
+
+if ((stripos($editext,"http")!==false) or (stripos($editext,"t.me/")!==false) or (stripos($editext,"telegram.me")!==false) or (stripos($editext,"@")!==false)){
+	$txt = "❗ <a href='tg://user?id=$ediid'>$edname</a>  <b>iltimos reklama tarqatmang.!</b>";
+$get = bot('getChatMember', [
+'chat_id' => $edchat,
+'user_id' => $ediid,
+])->result->status;
+if($get =="member"){
+bot ('deleteMessage',[
+'chat_id'=> $edchat,
+'message_id'=> $edimid 
+]);
+    bot('sendmessage',[
+        'chat_id'=>$edchat,
+        'text'=>$txt,
+        'parse_mode'=>'html',
+        ]);
+        }
+        }
+        //<•••••••• @Foydali_Bots ••••••••>\\
+if(stristr($editext,"ض") or stristr($editext, 'ص') or stristr($editext, 'ث') or stristr($editext, 'ق') or stristr($editext, 'ف') or stristr($editext, 'غ') or stristr($editext, 'ع') or stristr($editext, 'ه') or stristr($editext, 'خ') or stristr($editext, 'ح') or stristr($editext, 'ج') or stristr($editext, 'ش') or stristr($editext, 'س') or stristr($editext, 'ي') or stristr($editext, 'ب') or stristr($editext, 'ل') or stristr($editext, 'ا') or stristr($editext, 'ت') or stristr($editext, 'ن') or stristr($editext, 'م') or stristr($editext, 'ك') or stristr($editext, 'ط') or stristr($editext, 'ذ') or stristr($editext, 'ء') or stristr($editext, 'ؤ') or stristr($editext, 'ر') or stristr($editext, 'ى') or stristr($editext, 'ئ') or stristr($editext, 'ة') or stristr($editext, 'و') or stristr($editext, 'ز') or stristr($editext, 'ظ') or stristr($editext, 'د') or stristr($editext, 'أ') or stristr($editext, 'إ') or stristr($editext, '🔞') or stristr($editext, 'آ')){
+	$txt = "❗ <a href='tg://user?id=$ediid'>$edname</a>  <b>Bu guruhda arab iiiiiiiicc foydalanish mumkin emas.!</b>";
+$get = bot('getChatMember', [
+'chat_id' => $edchat,
+'user_id' => $ediid,
+])->result->status;
+if($get =="member"){
+bot ('deleteMessage',[
+'chat_id'=> $edchat,
+'message_id'=> $edimid 
+]);
+    bot('sendmessage',[
+        'chat_id'=>$edchat,
+        'text'=>$txt,
+        'parse_mode'=>'html',
+  'reply_markup'=>$tagi,
+]);
+}
+}
+// KANALDAN FORWARD
+$chpost = $update->channel_post;
+$chuser = $chpost->chat->username;
+$chpmesid = $chpost->message_id;
+$chcaption = $chpost->caption;
+
+//<----------Kirdi Chiqdilarni ochirish bolimi---------->//
+if(isset($message->new_chat_member) or isset($message->left_chat_member)){
+    bot('deleteMessage',[
+        'chat_id'=>$message->chat->id,
+        'message_id'=>$message->message_id,
+    ]);
+}
+//bot dnx
+if (($new_chat_members != NUll)&&($is_bot!=true)) {
+  if((stripos($lan,"fa")!== false) or (stripos($lan,"ar")!==false)){
+  $vaqti = strtotime("+999999999999 minutes");
+  bot('kickChatMember', [
+  'chat_id' => $chat_id,
+  'user_id' => $new_chat_members,
+  'until_date'=> $vaqti,
+]);
+}
+}
+if($cty == "supergroup" or $cty == "group"){
+if((stripos($capt,"http://")!==false) or (stripos($capt,"t.me/")!==false) or (stripos($capt,"https://")!==false) or (stripos($capt,"telegram.me/")!==false) or (stripos($capt,"@")!==false) or (stripos($capt,"bot?start=")!==false)  or (stripos($mtext,"bot?start=")!==false)  or  (stripos($mtext,"http://") !==false) or (stripos($mtext,"https://") !==false) or (stripos($mtext,"t.me/") !==false) or (stripos($mtext,"@") !==false)){
+$gett = bot('getChatMember', [
+'chat_id'=> $chat_id,
+'user_id'=> $fadmin,
+]);
+$get = $gett->result->status;
+if($get =="member"){
+bot ('deleteMessage', [
+'chat_id'=> $chat_id,
+'message_id'=> $mid,
+]);
+  bot('sendmessage', [
+      'chat_id' => $chat_id,
+      'text' => "❗ <a href='tg://user?id=$fadmin'>$name</a> <b> iltimos reklama tarqatmang! 
+👮🏻‍♂️ @Qoravul_ProBot 🚫 </b>",
+      'parse_mode' => 'html'
+  ]);
+}
+}
+}
+//<•••••••• @Foydali_Bots ••••••••>\\
+if($cty == "supergroup" or $cty == "group"){
+if(stristr($Foydali_Bots,"ض") or stristr($Foydali_Bots, 'ص') or stristr($Foydali_Bots, 'ث') or stristr($Foydali_Bots, 'ق') or stristr($Foydali_Bots, 'ف') or stristr($Foydali_Bots, 'غ') or stristr($Foydali_Bots, 'ع') or stristr($Foydali_Bots, 'ه') or stristr($Foydali_Bots, 'خ') or stristr($Foydali_Bots, 'ح') or stristr($Foydali_Bots, 'ج') or stristr($Foydali_Bots, 'ش') or stristr($Foydali_Bots, 'س') or stristr($Foydali_Bots, 'ي') or stristr($Foydali_Bots, 'ب') or stristr($Foydali_Bots, 'ل') or stristr($Foydali_Bots, 'ا') or stristr($Foydali_Bots, 'ت') or stristr($Foydali_Bots, 'ن') or stristr($Foydali_Bots, 'م') or stristr($Foydali_Bots, 'ك') or stristr($Foydali_Bots, 'ط') or stristr($Foydali_Bots, 'ذ') or stristr($Foydali_Bots, 'ء') or stristr($Foydali_Bots, 'ؤ') or stristr($Foydali_Bots, 'ر') or stristr($Foydali_Bots, 'ى') or stristr($Foydali_Bots, 'ئ') or stristr($Foydali_Bots, 'ة') or stristr($Foydali_Bots, 'و') or stristr($Foydali_Bots, 'ز') or stristr($Foydali_Bots, 'ظ') or stristr($Foydali_Bots, 'د') or stristr($Foydali_Bots, 'أ') or stristr($Foydali_Bots, 'إ') or stristr($Foydali_Bots, 'آ') or stristr($Foydali_Bots, '🔞')){
+$gett = bot('getChatMember', [
+'chat_id'=> $chat_id,
+'user_id'=> $fadmin,
+]);
+$get = $gett->result->status;
+if($get =="member"){
+bot ('deleteMessage', [
+'chat_id'=> $chat_id,
+'message_id'=> $mid,
+]);
+  bot('sendmessage', [
+      'chat_id' => $chat_id,
+      'text' => "❗ <a href='tg://user?id=$fadmin'>$name</a> <b>Bu guruhda arab yozuvlaridan foydalanish mumkin emas!
+👮🏻‍♂️ @Qoravul_ProBot 🚫 </b>",
+      'parse_mode' => 'html'
+  ]);
+}
+}
+}
+/// YANGI KOD END
+if(isset($Foydali_Bots1)){
+  if($cty == "group" or $cty == "supergroup"){
+    if(stripos($guruhlar,"$chat_id")!==false){
+    }else{
+    file_put_contents("stat/group.list","$guruhlar\n$chat_id");
+    }
+  }else{
+   $userlar = file_get_contents("stat/user.list");
+   if(stripos($userlar,"$chat_id")!==false){
+    }else{
+    file_put_contents("stat/user.list","$userlar\n$chat_id");
+   }
+  }
+ }
+/*
+//bot dnx
+if (($new_chat_members != NUll)&&($is_bot!=false)) {
+  bot('kickChatMember', [
+      'chat_id' => $chat_id,
+      'user_id' => $new_chat_members,
+  ]);
+  bot('sendmessage', [
+      'chat_id' => $chat_id,
+      'text' => "<b>❗Guruhdan keraksiz 🤖botlar tozalandi✔</b>",
+            'parse_mode' => 'html'
+  ]);
+}
+*/
+//<•••••••• @Foydali_Bots ••••••••>\\
+
+if((stripos($mtext,"/start") !== false) or (stripos($mtext,"start") !== false) or (stripos($mtext,"/start@QOROVUL24_UZBOT") !== false)) {
+if($cty == "supergroup" or $cty == "group"){
+  bot('sendChatAction',['chat_id'=>$chat_id,'action'=>"typing"]);
+$st = bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"<b>👋Salom!
+👮🏻‍♂️Men gruppalardagi reklama,kirdi-chiqdi va 🔞 larni o'chiraman✅</b>
+
+👮🏻‍♂️Men gruppangizda to‘liq ishlashim uchun meni gruppangizga admin qilishingiz kerak bo‘ladi✅
+
+🤖Botlarimiz:
+<b>@Foydali_Bots</b>
+👨‍💻Telegram bot yasash xizmati:
+<b>@Shaydullayev_Dev</b>",
+'parse_mode' => 'html',
+'disable_web_page_preview'=>true,
+  'reply_markup'=>json_encode([   
+   'inline_keyboard'=>[ 
+          [['text'=>"➕GURUHGA QO'SHISH➕",'url'=>"https://t.me/QOROVUL24_UZBOT?startgroup=new"]]
+]   
+]),
+]);
+  bot('deleteMessage', [
+  'chat_id' => $chat_id,
+  'message_id' => $mesid,
+  ]);
+    $stt = $st->result->message_id;
+  bot('deleteMessage',[
+ 'chat_id'=> $chat_id2,
+ 'message_id'=>$message_id2,
+]);
+}else{
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=> "<b>👋Salom!
+👮🏻‍♂️Men gruppalardagi reklama,kirdi-chiqdi va 🔞 larni o'chiraman✅</b>
+
+👮🏻‍♂️Men gruppangizda to‘liq ishlashim uchun meni gruppangizga admin qilishingiz kerak bo‘ladi✅
+
+🤖Botlarimiz:
+<b>@Foydali_Bots</b>
+👨‍💻Telegram bot yasash xizmati:
+<b>@Shaydullayev_Dev</b>",
+'parse_mode' => 'html',
+'disable_web_page_preview'=>true,
+  'reply_markup'=>json_encode([   
+   'inline_keyboard'=>[ 
+[['text'=>'👨🏻‍💻 Dasturchi','url'=>'https://telegram.me/Shaydullayev_Dev'],['text'=>'💯 Reklama','url'=>'https://telegram.me/Foydali_Bots_Ads']], 
+          [['text'=>'➕Guruhga Qo‘shish➕','url'=>'telegram.me/QOROVUL24_UZBOT?startgroup=new']]
+]   
+]),
+]);
+}
+}
+
+if($data=="/start"){
+	$chat_id2 = $update->callback_query->message->chat->id;
+   bot('editMessageText',[
+   'chat_id'=>$chat_id2,
+    'message_id'=>$message_id2,
+'text'=> "<b>👋Salom!
+👮🏻‍♂️Men gruppalardagi reklama,kirdi-chiqdi va 🔞 larni o'chiraman✅</b>
+
+👮🏻‍♂️Men gruppangizda to‘liq ishlashim uchun meni gruppangizga admin qilishingiz kerak bo‘ladi✅
+
+🤖Botlarimiz:
+<b>@Foydali_Bots</b>
+👨‍💻Telegram bot yasash xizmati:
+<b>@Shaydullayev_Dev</b>",
+'parse_mode' => 'html',
+'disable_web_page_preview'=>true,
+  'reply_markup'=>json_encode([   
+   'inline_keyboard'=>[ 
+[['text'=>'👨🏻‍💻 Dasturchi','url'=>'https://telegram.me/Shaydullayev_Dev'],['text'=>'💯 Reklama','url'=>'https://telegram.me/Foydali_Bots_Ads']],
+          [['text'=>'➕Guruhga Qo‘shish➕','url'=>'telegram.me/QOROVUL24_UZBOT?startgroup=new']]
+]   
+]),
+]);
+}
+
+if($Foydali_Bots1 == "/userlar"&&$fadmin==$admin){
+  bot('sendmessage',[
+    'chat_id'=>$admin,
+    'text'=>$guruhlar,
+    ]);
+}
+
+
+if($Foydali_Bots1 == "/guruhlar"&&$fadmin==$admin){
+  bot('sendmessage',[
+    'chat_id'=>$admin,
+    'text'=>$userlar,
+    ]);
+}
+
+
+if((stripos($mtext,"1001")!==false) and $fadmin==$admin){
+      $lx=explode("\n",$mtext);
+      $idsi = $lx[0];
+  $lin  = bot('exportchatinvitelink',[
+       'chat_id'=>"-$idsi",
+       ]);
+  $link = $lin->result;
+   bot('sendMessage',[
+       'chat_id'=>$admin,
+       'text'=>"$link",
+     ]);
+}
+     //<•••••••• @Foydali_Bots ••••••••>\\
+
+if($data == "stat3"){
+$gr = substr_count($guruhlar,"\n"); 
+$us = substr_count($userlar,"\n"); 
+$obsh = $gr + $us;
+   bot('editmessagetext',[
+   'chat_id'=>$chat_id2,
+    'message_id'=>$message_id2,
+       'text'=> "📊 Statistika 📊
+
+👤Userlar: *$us*
+👥Guruhlar: *$gr*
+🌏Umumiy: *$obsh*
+
+$bugun $soat",
+'parse_mode' => 'markdown',
+'disable_web_page_preview'=>true,
+  'reply_markup'=>json_encode([   
+   'inline_keyboard'=>[   
+[['text'=>"♻Yangilash",'callback_data'=>"stat3"]],
+]
+]),
+]);
+}
+
+if ($Foydali_Bots1 == "📊 Statistika 📊"){
+$gr = substr_count($guruhlar,"\n"); 
+$us = substr_count($userlar,"\n"); 
+$obsh = $gr + $us;
+bot ('sendmessage', [
+'chat_id'=>$chat_id,
+   'text'=> "📊 Statistika 📊
+
+👤Userlar: *$us*
+👥Guruhlar: *$gr*
+🌏Umumiy: *$obsh*
+
+$bugun $soat",
+'parse_mode' => 'markdown',
+'disable_web_page_preview'=>true,
+  'reply_markup'=>json_encode([   
+   'inline_keyboard'=>[   
+[['text'=>"♻Yangilash",'callback_data'=>"stat3"]],
+]
+]),
+]);
+}
+//<•••••••• @Foydali_Bots ••••••••>\\
+if($cty == "supergroup" or $cty == "group"){
+if(isset($forward_from_chat) or isset($forward)){
+  $gett = bot('getChatMember', [
+'chat_id' => $chat_id,
+'user_id' => $fadmin,
+]);
+$get = $gett->result->status;
+if($get =="member"){
+bot ('deleteMessage', [
+'chat_id'=> $chat_id,
+'message_id'=> $mid,
+]);
+bot ('SendMessage', [
+'chat_id'=> $chat_id,
+'text'=>"❗<a href='tg://user?id=$fadmin'>$name</a> <b>Bu guruhda forward xabar tarqatmang!
+👮🏻‍♂️ @Qoravul_ProBot 🚫 </b>",
+'parse_mode'=>"html",
+]);
+}
+}
+}
+
+if($cty == "supergroup" or $cty == "group"){
+if(isset($via_bot) or isset($via_bot)){
+  $gett = bot('getChatMember', [
+'chat_id' => $chat_id,
+'user_id' => $fadmin,
+]);
+$get = $gett->result->status;
+if($get =="member"){
+bot ('deleteMessage', [
+'chat_id'=> $chat_id,
+'message_id'=> $mid,
+]);
+bot ('SendMessage', [
+'chat_id'=> $chat_id,
+'text'=>"❗<a href='tg://user?id=$fadmin'>$name</a> <b>Bu guruhda reklama tarqatmang!
+👮🏻‍♂️ @Qoravul_ProBot 🚫 </b>",
+'parse_mode'=>"html",
+]);
+}
+}
+}
+
+//<•••••••• Admin Panel ••••••••>\\
+if($Foydali_Bots1 == "/admin" or $Foydali_Bots1 == "/panel" and $chat_id == $admin){
+bot('sendMessage',[
+    'chat_id'=>$admin,
+    'text'=>"Admin panelga xush kelibsiz!",
+    'reply_markup'=>json_encode([
+    'resize_keyboard'=>true,
+    'keyboard'=>[
+    [['text'=>"📊 Statistika 📊"]],
+    [['text'=>"👤 Userlarga xabar 📩"],['text'=>"👤 Userlarga forward 📩"]],
+    [['text'=>"👥 Guruhlarga xabar 📩"],['text'=>"👥 Guruhlarga forward 📩"]],
+    ]
+    ])
+    ]);
+}
+
+$yubbi = "📨Yuboriladigan xabar matnini kiriting. Xabar turi markdown";
+ if($Foydali_Bots1 == "👤 Userlarga xabar 📩" and $chat_id == $admin){
+      ty($chat_id);
+      bot('sendMessage',[
+      'chat_id'=>$chat_id,
+      'text'=>$yubbi,
+      ]);
+      file_put_contents("stat/$chat_id.step","user");
+    }
+
+    if($step == "user" and $chat_id == $admin){
+  file_put_contents("stat/$chat_id.step","link");
+file_put_contents("stat/$chat_id.matn",$Foydali_Bots1);
+ bot('sendmessage',[
+          'chat_id'=>$admin,
+          'parse_mode'=>"markdown",
+          'text'=>"✅*Matn qabul qilindi endi namuna bo'yicha knopkani yuboring!
+Namuna:*
+`Shaydullayev_Dev + https://t.me/Shaydullayev_Dev`",
+          ]);      
+}
+    
+if($step == "link"){
+      if($Foydali_Bots1 == "/otmen"){
+      file_put_contents("stat/$chat_id.step","");
+      }else{ 
+$in=file_get_contents("stat/$chat_id.in");
+$matn=file_get_contents("stat/$chat_id.matn");
+   $i=0;
+$keyboard = [];
+$keyboard["inline_keyboard"] = [];
+$rows = explode("\n",$Foydali_Bots1);
+foreach($rows as $row){
+$j=0;
+$keyboard["inline_keyboard"][$i]=[];
+$bottons = explode(",",$row);
+foreach($bottons as $botton){
+$data = explode("+",$botton."+");
+$Ibotton = ["text" => trim($data[0]), "url" => trim($data[1])];
+$keyboard["inline_keyboard"][$i][$j] = $Ibotton;
+$j++;
+}
+$i++;
+}
+$reply_markup=json_encode($keyboard);
+$soni=substr_count($userlar,"\n")-1;
+      $idszs=explode("\n",$userlar);
+      foreach($idszs as $idlat){
+     $userr = bot('sendMessage',[
+      'chat_id'=>$idlat,
+      'text'=>$matn,
+      'parse_mode'=>'markdown',
+      'disable_web_page_preview' => true,
+      'reply_markup'=>($reply_markup)
+      ]);
+ $sended=$userr->ok;
+if($sended){
+$true=file_get_contents("viki/send.ok");
+file_put_contents("viki/send.ok","$true\n$idlat");
+}else{
+$false=file_get_contents("viki/send.no");
+file_put_contents("viki/send.no","$false\n$idlat");
+}
+}
+$true=file_get_contents("viki/send.ok");
+$false=file_get_contents("viki/send.no");
+$truecount=substr_count($true,"\n");
+$falsecount=substr_count($false,"\n");
+bot('sendmessage',[
+    'chat_id'=>$admin,
+    'text'=>"Userlarga yuborildi\nYubordim: $truecount/$soni\nYuborolmadim: $falsecount/$soni",
+    'parse_mode'=>"markdown",
+    ]);
+file_put_contents("viki/send.ok","");
+file_put_contents("viki/send.no","");
+  file_put_contents("stat/$chat_id.step","");
+}
+}
+   
+       if($Foydali_Bots1 == "👥 Guruhlarga xabar 📩" and $chat_id == $admin){
+      ty($chat_id);
+      bot('sendmessage',[
+      'chat_id'=>$chat_id,
+      'text'=>$yubbi,
+      ]);
+      file_put_contents("stat/$chat_id.step","guruh");
+    }
+
+       if($Foydali_Bots1 == "👥 Guruhlarga xabar 📩" and $chat_id == $admin){
+      ty($chat_id);
+      bot('sendmessage',[
+      'chat_id'=>$chat_id,
+      'text'=>$yubbi,
+      ]);
+      file_put_contents("stat/$chat_id.step","guruh");
+    }
+
+    if($step == "guruh" and $chat_id == $admin){
+    	         file_put_contents("stat/$chat_id.step","link1");
+          file_put_contents("stat/$chat_id.matn1",$Foydali_Bots1);
+ bot('sendmessage',[
+          'chat_id'=>$admin,
+              'parse_mode'=>"markdown",
+          'text'=>"✅*Matn qabul qilindi endi namuna bo'yicha knopkani yuboring!
+Namuna:*
+`Shaydullayev_Dev + https://t.me/Shaydullayev_Dev`",
+          ]);      
+}
+
+if($step == "link1"){
+      if($Foydali_Bots1 == "/otmen"){
+      file_put_contents("stat/$chat_id.step","");
+      }else{ 
+      	      $matn1=file_get_contents("stat/$chat_id.matn1");
+     
+   $i=0;
+$keyboard = [];
+$keyboard["inline_keyboard"] = [];
+$rows = explode("\n",$Foydali_Bots1);
+foreach($rows as $row){
+$j=0;
+$keyboard["inline_keyboard"][$i]=[];
+$bottons = explode(",",$row);
+foreach($bottons as $botton){
+$data = explode("+",$botton."+");
+$Ibotton = ["text" => trim($data[0]), "url" => trim($data[1])];
+$keyboard["inline_keyboard"][$i][$j] = $Ibotton;
+$j++;
+}
+$i++;
+}
+$reply_markup=json_encode($keyboard);
+     $soni=substr_count($guruhlar,"\n")-1;
+    $idszs=explode("\n",$guruhlar);
+      foreach($idszs as $idlat){
+    $guruu =  bot('sendMessage',[
+      'chat_id'=>$idlat,
+         'text'=>$matn1,
+      'parse_mode'=>'markdown',
+      'disable_web_page_preview' => true,
+    'reply_markup'=>($reply_markup)
+      ]);
+  $sended=$guruu->ok;
+if($sended){
+$true=file_get_contents("viki/send.ok");
+file_put_contents("viki/send.ok","$true\n$idlat");
+}else{
+$false=file_get_contents("viki/send.no");
+file_put_contents("viki/send.no","$false\n$idlat");
+}
+}
+$true=file_get_contents("viki/send.ok");
+$false=file_get_contents("viki/send.no");
+$truecount=substr_count($true,"\n");
+$falsecount=substr_count($false,"\n");   
+          bot('sendmessage',[
+          'chat_id'=>$admin,
+          'text'=>"Guruhlarga yuborildi\nYubordim: $truecount/$soni\nYuborolmadim: $falsecount/$soni",
+          ]);      
+      file_put_contents("stat/$chat_id.step","");
+        }
+      }
+
+$uzkod = $update->message;
+$fadmin = $uzkod->from->id;
+$chat_id = $uzkod->chat->id;
+$mid = $uzkod->message_id;
+function Forward($uzkod,$ahror,$kodernet){
+bot('ForwardMessage',[
+'chat_id'=>$uzkod,
+'from_chat_id'=>$ahror,
+'message_id'=>$kodernet
+    ]);
+}
+// Forward Group
+if($Foydali_Bots == "👥 Guruhlarga forward 📩" and $fadmin == $admin){
+file_put_contents("stat/$chat_id.step","fwd");
+bot('sendmessage',[
+'chat_id'=>$chat_id,
+'text'=>"Forword xabar yuboring:",
+  ]);
+}
+
+if($step == "fwd" and $fadmin == $admin){
+file_put_contents("stat/$chat_id.step","guruhh");
+$forp = fopen( "stat/group.list", 'r'); 
+while(!feof($forp)) { 
+$fakar = fgets($forp); 
+Forward($fakar, $chat_id,$mid); 
+} 
+bot('sendMessage',[ 
+  'chat_id'=>$chat_id, 
+ 'text'=>"Hamma guruhlarga forward yetkazildi", 
+   ]);
+}
+//Forward user
+if($Foydali_Bots == "👤 Userlarga forward 📩" and $fadmin == $admin){
+file_put_contents("stat/$chat_id.step","for");
+bot('sendmessage',[
+'chat_id'=>$chat_id,
+'text'=>"Forword xabar yuboring:",
+  ]);
+}
+
+if($step == "for" and $fadmin == $admin){
+file_put_contents("stat/$chat_id.step","userr");
+$forp = fopen( "stat/user.list", 'r'); 
+while(!feof($forp)) { 
+$fakar = fgets($forp); 
+Forward($fakar, $chat_id,$mid); 
+} 
+bot('sendMessage',[ 
+  'chat_id'=>$chat_id, 
+ 'text'=>"Hamma userlarga forward yetkazildi", 
+   ]);
+}
+
+    //inline
+$userID = $update->inline_query->from->id;
+$theQuery = $update->inline_query->query;
+$cid = $update->inline_query->query;
+if(mb_stripos($cid,"@")!==false){
+$user = bot("getchat",[
+	'chat_id'=>$cid,
+	]);
+$type = $user->result->type;
+$id = $user->result->id;
+$us = bot('getChatMembersCount',[
+	'chat_id'=>$cid
+	]);
+	$count = $us->result;
+if($type=="channel"){
+bot('answerInlineQuery', [
+'inline_query_id'=>$update->inline_query->id,
+'cache_time'=>1,
+'results'=>json_encode([[
+'type'=>'article',
+'id'=>base64_encode(1),
+'title'=>"$cid\nhaqida ma'lumot",
+'input_message_content'=>[
+'disable_web_page_preview'=>true,
+'parse_mode' => 'markdown',
+'message_text'=>"*📡Kanal useri:*  [$cid]\n*👥A'zolari*: `$count`\n*🆔Kanal id:* `$id`",
+],
+'reply_markup' =>
+[ 'inline_keyboard'=>[
+                   [["switch_inline_query"=>"@", 'text' => "🆔Aniqlash"],],
+               ] ],
+
+]
+])
+]);
+}
+//end
+if($type=="supergroup"){
+bot('answerInlineQuery', [
+'inline_query_id'=>$update->inline_query->id,
+'cache_time'=>1,
+'results'=>json_encode([[
+'type'=>'article',
+'id'=>base64_encode(1),
+'title'=>"$cid\ngruppasi haqida ma'lumot",
+'input_message_content'=>[
+'disable_web_page_preview'=>true,
+'parse_mode' => 'markdown',
+'message_text'=>"*📡Gruppa useri:*  [$cid]\n*?? Gruppa a'zolari*: `$count`\n*🆔Gruppa id:* `$id`",
+],
+'reply_markup' =>
+[ 'inline_keyboard'=>[
+                   [["switch_inline_query"=>"@", 'text' => "🆔Aniqlash"],],
+               ] ],
+
+]
+])
+]);
+}
+}
+//<•••••••• @Foydali_Bots ••••••••>\\
+  ///inline
+$userID = $update->inline_query->from->id;
+$theQuery = $update->inline_query->query;
+$cid = $update->inline_query->query;
+
+?>
